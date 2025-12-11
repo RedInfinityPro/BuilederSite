@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Montserrat:wght@400;500;600;700&display=swap');
+
+:root {
+    --bg-primary: #0f0f23;
+    --bg-secondary: #1a1a2e;
+    --bg-tertiary: #16213e;
+    --accent-primary: #00ff87;
+    --accent-secondary: #00d9ff;
+    --text-primary: #ffffff;
+    --text-secondary: #a0a0a0;
+    --border-color: rgba(0, 255, 135, 0.3);
+    --shadow-glow: 0 0 20px rgba(0, 255, 135, 0.2);
+    --shadow-glow_nameMaker: 0 0 20px rgba(255, 0, 0, 0.2);
+    --accent-primary_nameMaker: #ff0000;
+    --title-size: 28px;
+    --normal-size: 14px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    padding-top: 10px;
+}
+
+.sticky-header {
+    position: fixed;
+    width: 100%;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    font-size: var(--title-size);
+    background: rgba(15, 15, 35, 0.95);
+    backdrop-filter: blur(5px);
+    padding: 1.5rem 2rem;
+    z-index: 1000;
+    border-bottom: 1px solid var(--border-color);
+    box-shadow: var(--shadow-glow);
+    user-select: none;
+}
+
+.sticky-header nav {
+    margin-top: 10px;
+}
+
+.sticky-header nav a {
+    font-weight: 500;
+    border-radius: 16px;
+    padding: 0.5rem;
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-glow);
+    user-select: none;
+    font-size: var(--normal-size);
+    text-decoration: none;
+    color: white;
+    transition: transform 0.3s ease;
+}
+
+.sticky-header nav a.active {
+    background-color: #3498db;
+}
+
+.sticky-header nav a.deactive {
+    background-color: transparent;
+}
+
+.page {
+    display: none;
+}
+
+.page.active {
+    display: block;
+}

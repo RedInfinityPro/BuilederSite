@@ -7,99 +7,186 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="assets\css\index.css">
-
+    <link rel="stylesheet" href="assets\css\navbar.css">
+    <link rel="stylesheet" href="assets\css\home.css">
+    <link rel="stylesheet" href="assets\css\generate.css">
 </head>
 
-<header>
-    <label>ReadMe Maker</label>
-    <nav class="nav-links">
-        <a href="#"><i class="fas fa-home"></i> Home</a>
-        <a href="#"><i class="fas fa-book"></i> Docs</a>
-        <a href="#"><i class="fas fa-palette"></i> Styles</a>
-        <a href="#"><i class="fas fa-question-circle"></i> Help</a>
-    </nav>
-</header>
-
 <body>
-    <div class="container">
-        <div class="grid-layout">
-            <div class="card">
-                <h2 class="card-title">
+    <div id="navbar-container"></div>
+
+    <div id="home" class="page active">
+        <div class="container">
+            <div class="grid-layout_contact">
+                <div class="card_contact">
                     <i class="fas fa-cog"></i>
-                    Badge Configuration
-                </h2>
-                <form id="badgeForm">
+                    Contact US
                     <div class="form-group">
-                        <label><i class="fas fa-tag"></i> Label</label>
-                        <input type="text" id="type-input" placeholder="e.g., License, Build, Version" value="Build">
+                        <label><i class="fas fa-user"></i> Name</label>
+                        <input type="text" id="name-input" placeholder="Name..." required>
                     </div>
                     <div class="form-group">
-                        <label><i class="fas fa-comment"></i> Message</label>
-                        <input type="text" id="message-input" placeholder="e.g., Passing, MIT, 1.0.0" value="Passing">
+                        <label><i class="fa-solid fa-envelope"></i> Email</label>
+                        <input type="text" id="email-input" placeholder="Email..." required>
                     </div>
                     <div class="form-group">
-                        <label><i class="fas fa-fill-drip"></i> Color</label>
-                        <input type="color" id="mainColor-input" value="#00ff87">
-                    </div>
-                    <div class="form-group">
-                        <label><i class="fas fa-paint-brush"></i> Style</label>
-                        <select id="style">
-                            <option value="flat">Flat</option>
-                            <option value="flat-square">Flat Square</option>
-                            <option value="plastic">Plastic</option>
-                            <option value="for-the-badge" selected>For The Badge</option>
-                            <option value="social">Social</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label><i class="fas fa-icons"></i> Logo (Optional)</label>
-                        <input type="text" id="logo-input" placeholder="e.g., github, npm, python">
-                    </div>
-                    <div class="form-group">
-                        <label><i class="fas fa-palette"></i> Logo Color</label>
-                        <input type="color" id="logoColor-input" value="#ffffff">
+                        <input type="text" id="message-input" placeholder="Message...">
                     </div>
                     <div class="button-group">
-                        <button type="button" class="btn-secondary" id="clearBtn">
-                            <i class="fas fa-eraser"></i> Clear
-                        </button>
-                        <button type="button" class="btn-primary" id="generateBtn">
-                            <i class="fas fa-magic"></i> Publish
-                        </button>
+                        <input type="button" class="btn-primary" id="generateBtn" type="submit" value="Submit">
                     </div>
-                </form>
-            </div>
+                </div>
 
-            <div class="card">
-                <h2 class="card-title">
-                    <i class="fas fa-eye"></i>
-                    Preview & Export
-                </h2>
-                <div class="preview-section">
-                    <img src="" alt="Badge Preview"
-                        id="badgePreview">
-                </div>
-                <div class="form-group output-group">
-                    <label><i class="fas fa-code"></i> Badge URL</label>
-                    <input type="text" id="urlOutput" readonly>
-                    <button class="copy-btn" data-target="urlOutput">
-                        <i class="fas fa-copy"></i> Copy
-                    </button>
-                </div>
-                <div class="form-group output-group">
-                    <label><i class="fab fa-markdown"></i> Markdown</label>
-                    <input type="text" id="markdownOutput" readonly>
-                    <button class="copy-btn" data-target="markdownOutput">
-                        <i class="fas fa-copy"></i> Copy
-                    </button>
+                <div class="card_contact">
+                    <h2 class="card-title_contact">
+                        <i class="fas fa-cog"></i>
+                        About
+                    </h2>
+                    <div class="form-group output-group">
+                        <label><i class="fa-brands fa-github"></i> Github</label>
+                        <input type="button" class="btn-secondary" id="followBtn" type="follow" value="RedInfinityPro">
+                    </div>
+                    <div class="form-group output-group">
+                        <label><i class="fa-brands fa-stack-overflow"></i> Stock Overflow</label>
+                        <input type="button" class="btn-secondary" id="followBtn" type="follow" value="RedInfinityPro">
+                    </div>
+                    <p>Welcome, this website was build around the idea to automate the process of making ReadMe files on
+                        github.</p>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Add a script tag for any JavaScript -->
-    <script src="assets\js\index.js"></script>
+    <div id="generate" class="page">
+        <div class="container">
+            <div class="grid-layout_nameMaker">
+                <div class="card_nameMaker">
+                    <i class="fas fa-cog"></i>
+                    Describe Project Configuration
+                    <form id="describeForm" action="" method="get">
+                        <div class="form-group">
+                            <label><i class="fas fa-language"></i> Main Language</label>
+                            <input type="text" id="language-input" placeholder="Language...">
+                        </div>
+                        <div class="form-group">
+                            <label><i class="fas fa-folder"></i> Type</label>
+                            <input type="text" id="project-input" placeholder="Project type...">
+                        </div>
+                        <div class="form-group">
+                            <label><i class="fas fa-file"></i> About</label>
+                            <input type="text" id="about-input" placeholder="About...">
+                        </div>
+                        <div class="form-group">
+                            <label><i class="fas fa-box"></i> Packages</label>
+                            <input type="text" id="package-input" placeholder="Packages...">
+                        </div>
+                        <div class="form-group">
+                            <input type="button" class="btn-secondary" id="projectBtn" type="upload"
+                                value="Upload Project">
+                        </div>
+                        <div class="button-group">
+                            <input type="button" class="btn-secondary" id="clearBtn" type="clear" value="Clear">
+                            <input type="button" class="btn-primary" id="generateBtn" type="submit"
+                                value="Generate Name">
+                        </div>
+                    </form>
+                </div>
+
+                <div class="card_nameMaker">
+                    <h2 class="card-title_nameMaker">
+                        <i class="fas fa-eye"></i>
+                        Project Name
+                    </h2>
+                    <div class="form-group output-group">
+                        <label><i class="fab fa-name"></i> Name</label>
+                        <input type="text" id="naneOutput" readonly>
+                        <button class="copy-btn" data-target="nameOutput">
+                            <i class="fas fa-copy"></i> Copy
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="grid-layout_badgeMaker">
+                    <div class="card" id="community-card">
+                        <i class="fas fa-users"></i>
+                        Community Made
+                    </div>
+                    <div class="card">
+                        <i class="fas fa-cog"></i>
+                        Badge Configuration
+                        <form id="badgeForm" action="" method="get">
+                            <div class="form-group">
+                                <label><i class="fas fa-folder"></i> Name</label>
+                                <input type="text" id="badge-name-input" placeholder="Name..." required>
+                            </div>
+                            <div class="form-group">
+                                <label><i class="fas fa-tag"></i> Label</label>
+                                <input type="text" id="badge-type-input" placeholder="e.g., License, Build, Version">
+                            </div>
+                            <div class="form-group">
+                                <label><i class="fas fa-comment"></i> Message</label>
+                                <input type="text" id="badge-message-input" placeholder="e.g., Passing, MIT, 1.0.0">
+                            </div>
+                            <div class="form-group">
+                                <label><i class="fas fa-fill-drip"></i> Color</label>
+                                <input type="color" id="badge-color-input" value="#ffffff">
+                            </div>
+                            <div class="form-group">
+                                <label><i class="fas fa-paint-brush"></i> Style</label>
+                                <select id="badge-style">
+                                    <option value="flat">Flat</option>
+                                    <option value="flat-square">Flat Square</option>
+                                    <option value="plastic">Plastic</option>
+                                    <option value="for-the-badge" selected>For The Badge</option>
+                                    <option value="social">Social</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label><i class="fas fa-icons"></i> Logo</label>
+                                <input type="text" id="logo-input" placeholder="e.g., github, npm, python">
+                            </div>
+                            <div class="form-group">
+                                <label><i class="fas fa-palette"></i> Logo Color</label>
+                                <input type="color" id="logoColor-input" value="#ffffff">
+                            </div>
+                            <div class="button-group">
+                                <input type="button" class="btn-secondary" id="clearBtn" type="clear" value="Clear">
+                                <input type="button" class="btn-primary" id="generateBtn" type="submit" value="Submit">
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="card">
+                        <h2 class="card-title">
+                            <i class="fas fa-eye"></i>
+                            Preview & Export
+                        </h2>
+                        <div class="preview-section">
+                            <img src="" alt="Badge Preview" id="badgePreview">
+                        </div>
+                        <div class="form-group output-group">
+                            <label><i class="fas fa-code"></i> Badge URL</label>
+                            <input type="text" id="urlOutput" readonly>
+                            <button class="copy-btn" data-target="urlOutput">
+                                <i class="fas fa-copy"></i> Copy
+                            </button>
+                        </div>
+                        <div class="form-group output-group">
+                            <label><i class="fab fa-markdown"></i> Markdown</label>
+                            <input type="text" id="markdownOutput" readonly>
+                            <button class="copy-btn" data-target="markdownOutput">
+                                <i class="fas fa-copy"></i> Copy
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Add a script tag for any JavaScript -->
+        <script src="assets\js\index.js"></script>
+        <script src="assets\js\generate.js"></script>
 </body>
 
 </html>

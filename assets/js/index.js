@@ -1,29 +1,35 @@
-
-function createMarkdown(type_input, start, message_input, mainColor_input, style_input, logo_input, logoColor_input) {
-    let new_fullLink;
-    new_fullLink = "![" + type_input + "](" + start + message_input + "-" + mainColor_input + "?style=" + style_input + "&logo=" + logo_input + "&logoColor=" + logoColor_input + ")";
-    document.getElementById("markdownOutput").value = new_fullLink;
+function loadNavbar() {
+    const navbarHTML = `
+                <header class="sticky-header">
+                    <label>ReadMe Maker</label>
+                    <nav>
+                        <a href="#home" class="nav-link"><i class="fas fa-home"></i> Home</a>
+                        <a href="#generate" class="nav-link"><i class="fas fa-book"></i> Generate Tools</a>
+                    </nav>
+                </header>
+            `;
+    document.getElementById('navbar-container').innerHTML = navbarHTML;
+    // Add click handlers for navigation
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', function (e) {
+            e.preventDefault();
+            const pageId = this.getAttribute('href').substring(1);
+            showPage(pageId);
+            // Update active link
+            document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+            this.classList.add('active');
+        });
+    });
+    // Set home as active initially
+    document.querySelector('.nav-link').classList.add('active');
 }
 
-function editLink() {
-    let fullLink;
-    // (https://img.shields.io/badge/Visual_Studio-Code-478CBF?style=for-the-badge&logo=none-code&logoColor=blue)
-    // -->
-    let start = "https://img.shields.io/badge/";
-    let type_input = document.getElementById("type-input").value;
-    let message_input = document.getElementById("message-input").value;
-    let mainColor_input = document.getElementById("mainColor-input").value.replace("#", "");
-    let style_input = document.getElementById("style").value;
-    let logo_input = document.getElementById("logo-input").value;
-    let logoColor_input = document.getElementById("logoColor-input").value.replace("#", "");
-    fullLink = start + message_input + "-" + mainColor_input + "?style=" + style_input + "&logo=" + logo_input + "&logoColor=" + logoColor_input;
-    createMarkdown(type_input, start, message_input, mainColor_input, style_input, logo_input, logoColor_input);
-    return fullLink;
+// Show specific page
+function showPage(pageId) {
+    document.querySelectorAll('.page').forEach(page => {
+        page.classList.remove('active');
+    });
+    document.getElementById(pageId).classList.add('active');
 }
-
-const form = document.getElementById("badgeForm");
-form.addEventListener("input", (event) => {
-    const editlink = editLink();
-    document.getElementById("badgePreview").src = editlink;
-    document.getElementById("urlOutput").value = editlink;
-});
+// Load navbar when page loads
+loadNavbar();
