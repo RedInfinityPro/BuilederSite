@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Builer File</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="assets\css\index.css">
+
+</head>
+
+<header>
+    <label>ReadMe Maker</label>
+    <nav class="nav-links">
+        <a href="#"><i class="fas fa-home"></i> Home</a>
+        <a href="#"><i class="fas fa-book"></i> Docs</a>
+        <a href="#"><i class="fas fa-palette"></i> Styles</a>
+        <a href="#"><i class="fas fa-question-circle"></i> Help</a>
+    </nav>
+</header>
+
+<body>
+    <div class="container">
+        <div class="grid-layout">
+            <div class="card">
+                <h2 class="card-title">
+                    <i class="fas fa-cog"></i>
+                    Badge Configuration
+                </h2>
+                <form id="badgeForm">
+                    <div class="form-group">
+                        <label><i class="fas fa-tag"></i> Label</label>
+                        <input type="text" id="type-input" placeholder="e.g., License, Build, Version" value="Build">
+                    </div>
+                    <div class="form-group">
+                        <label><i class="fas fa-comment"></i> Message</label>
+                        <input type="text" id="message-input" placeholder="e.g., Passing, MIT, 1.0.0" value="Passing">
+                    </div>
+                    <div class="form-group">
+                        <label><i class="fas fa-fill-drip"></i> Color</label>
+                        <input type="color" id="mainColor-input" value="#00ff87">
+                    </div>
+                    <div class="form-group">
+                        <label><i class="fas fa-paint-brush"></i> Style</label>
+                        <select id="style">
+                            <option value="flat">Flat</option>
+                            <option value="flat-square">Flat Square</option>
+                            <option value="plastic">Plastic</option>
+                            <option value="for-the-badge" selected>For The Badge</option>
+                            <option value="social">Social</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label><i class="fas fa-icons"></i> Logo (Optional)</label>
+                        <input type="text" id="logo-input" placeholder="e.g., github, npm, python">
+                    </div>
+                    <div class="form-group">
+                        <label><i class="fas fa-palette"></i> Logo Color</label>
+                        <input type="color" id="logoColor-input" value="#ffffff">
+                    </div>
+                    <div class="button-group">
+                        <button type="button" class="btn-secondary" id="clearBtn">
+                            <i class="fas fa-eraser"></i> Clear
+                        </button>
+                        <button type="button" class="btn-primary" id="generateBtn">
+                            <i class="fas fa-magic"></i> Publish
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="card">
+                <h2 class="card-title">
+                    <i class="fas fa-eye"></i>
+                    Preview & Export
+                </h2>
+                <div class="preview-section">
+                    <img src="" alt="Badge Preview"
+                        id="badgePreview">
+                </div>
+                <div class="form-group output-group">
+                    <label><i class="fas fa-code"></i> Badge URL</label>
+                    <input type="text" id="urlOutput" readonly>
+                    <button class="copy-btn" data-target="urlOutput">
+                        <i class="fas fa-copy"></i> Copy
+                    </button>
+                </div>
+                <div class="form-group output-group">
+                    <label><i class="fab fa-markdown"></i> Markdown</label>
+                    <input type="text" id="markdownOutput" readonly>
+                    <button class="copy-btn" data-target="markdownOutput">
+                        <i class="fas fa-copy"></i> Copy
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add a script tag for any JavaScript -->
+    <script src="assets\js\index.js"></script>
+</body>
+
+</html>
